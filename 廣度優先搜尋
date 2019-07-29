@@ -1,0 +1,16 @@
+def person_is_target:
+ ' any conditions here
+
+def search(name):
+  search_queue=deque() 'create new queue
+  search_queue +=graph[name]
+  searched=[] 'create a array to follow up who's been searched
+  while search_queue:
+    person = search_queue.popleft() 'take the first left element  
+    if not person in searched:
+      if person_is_seller(person):
+        print person + " is the target "
+        return True
+      else:
+        search_queue += graph[person]
+        searched.append(person)
